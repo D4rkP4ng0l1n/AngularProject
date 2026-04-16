@@ -1,4 +1,6 @@
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
 import { ClsProduct } from "../Models/cls-product-card";
 
 @Injectable({
@@ -6,14 +8,11 @@ import { ClsProduct } from "../Models/cls-product-card";
 })
 export class ProductService {
 
-    private products : ClsProduct[] = [
-        new ClsProduct("Freddy Fazbear", "/img/Freddy.webp"),
-        new ClsProduct("Bonnie", "/img/Bonnie.webp"),
-        new ClsProduct("Chica", "/img/Chica.webp"),
-        new ClsProduct("Foxy", "/img/Foxy.webp")
-    ];
+    private apiUrl = 'http://localhost:3000/products';
 
-    getProduct(): ClsProduct[] {
-        return [...this.products];
-    }
+    constructor(private http: HttpClient) { }
+
+    getProduct(): Observable<ClsProduct[]> {
+        return this.http.get<ClsProduct[]>(this.apiUrl);
+  }
 }

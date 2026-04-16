@@ -8,6 +8,8 @@ const productRoutes = require('./src/routes/product.routes');
 
 const app = express();
 
+app.use(cors());
+
 // Connexion DB
 connectDB();
 
