@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ClsProduct } from '../../Models/cls-product-card';
 
 @Component({
   selector: 'app-product-card',
@@ -7,16 +8,6 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './product-card.html',
   styleUrl: './product-card.scss'
 })
-export class ProductCard implements OnInit {
-  name!: string;
-  image!: string;
-
-  ngOnInit(): void {
-    this.name = "Freddy Fazbear";
-    this.image = "/img/Freddy.webp";
-  }
-
-  addToCart() {
-    console.log(this.name + ' ajouté au panier');
-  }
+export class ProductCard {
+  @Input() product !: ClsProduct;
 }

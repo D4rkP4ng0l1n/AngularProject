@@ -1,5 +1,6 @@
-import { Component, signal } from '@angular/core';
-import { ProductCard } from './components/product-card/product-card';
+import { Component, OnInit } from '@angular/core';
+import { ProductCard } from './Components/product-card/product-card';
+import { ClsProduct } from './Models/cls-product-card';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,10 @@ import { ProductCard } from './components/product-card/product-card';
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-export class App {
-  protected readonly title = signal('AngularProject');
+export class App implements OnInit {
+  product !: ClsProduct;
+
+  ngOnInit(): void {
+    this.product = new ClsProduct("Freddy Fazbear", "/img/Freddy.webp");
+  }
 }
