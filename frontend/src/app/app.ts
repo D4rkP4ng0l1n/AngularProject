@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductCard } from './Components/product-card/product-card';
 import { ClsProduct } from './Models/cls-product-card';
+import { ProductService } from './services/product.service';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +10,11 @@ import { ClsProduct } from './Models/cls-product-card';
   styleUrl: './app.scss'
 })
 export class App implements OnInit {
-  product !: ClsProduct;
+  severalProduct !: ClsProduct[];
+
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
-    this.product = new ClsProduct("Freddy Fazbear", "/img/Freddy.webp");
+    this.severalProduct = this.productService.getProduct();
   }
 }
