@@ -11,6 +11,7 @@ const connectDB = async () => {
   try {
     await mongoose.connect(mongoUri);
     console.log("MongoDB Atlas connecté");
+    console.log("DB utilisée :", mongoose.connection.db.databaseName);
   } catch (err) {
     console.error("Erreur connexion MongoDB :", err);
     process.exit(1);
