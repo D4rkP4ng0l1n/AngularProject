@@ -1,5 +1,19 @@
-<div class="products-container">
-  @for(component of severalProduct; track component._id) {
-    <app-product-card [product]="component"></app-product-card>
+<div class="products-wrapper">
+  <!-- Golden Freddy Easter Egg -->
+  @if(getGoldenFreddy(); as goldenFreddy) {
+    <div class="golden-freddy-section">
+      <div role="listitem">
+        <app-product-card [product]="goldenFreddy"></app-product-card>
+      </div>
+    </div>
   }
+
+  <!-- Autres produits -->
+  <div class="products-container" role="list">
+    @for(component of getNormalProducts(); track component._id) {
+      <div role="listitem">
+        <app-product-card [product]="component"></app-product-card>
+      </div>
+    }
+  </div>
 </div>

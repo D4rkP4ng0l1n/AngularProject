@@ -1,8 +1,16 @@
-<div class="card">
+<div class="card" [class.golden-freddy]="product._id === '1987'">
   <h2>{{ product.name }}</h2>
-  <img [src]="product.image" alt="{{ product.name }}">
+  <img 
+    [src]="product.image" 
+    [alt]="'Image de ' + product.name"
+    loading="lazy"
+  >
 
-  <button (click)="add(product._id)">
+  <button 
+    (click)="add(product._id)"
+    [attr.aria-label]="'Ajouter ' + product.name + ' au panier'"
+    type="button"
+  >
     Ajouter au panier
   </button>
 </div>

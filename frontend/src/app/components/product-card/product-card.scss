@@ -212,3 +212,54 @@
     }
   }
 }
+
+/* Golden Freddy Easter Egg */
+.card.golden-freddy {
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+  border: 2px solid #ffd700;
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.4), 0 0 60px rgba(255, 215, 0, 0.2), inset 0 0 20px rgba(255, 215, 0, 0.1);
+  animation: goldenGlow 3s ease-in-out infinite;
+
+  h2 {
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.8), 0 0 20px rgba(255, 215, 0, 0.5);
+    font-weight: 800;
+    letter-spacing: 1px;
+  }
+
+  img {
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.6));
+  }
+
+  button {
+    border: 2px solid #ffd700;
+    color: #ffd700;
+    background: rgba(255, 215, 0, 0.1);
+    font-weight: 800;
+    letter-spacing: 0.5px;
+
+    &:hover {
+      background: #ffd700;
+      color: #000;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.9);
+    }
+  }
+
+  &:hover {
+    transform: translateY(-12px) scale(1.05);
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.6), 0 0 80px rgba(255, 215, 0, 0.3), inset 0 0 30px rgba(255, 215, 0, 0.15);
+
+    img {
+      filter: drop-shadow(0 0 25px rgba(255, 215, 0, 0.8)) brightness(1.2);
+    }
+  }
+}
+
+@keyframes goldenGlow {
+  0%, 100% {
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.4), 0 0 60px rgba(255, 215, 0, 0.2), inset 0 0 20px rgba(255, 215, 0, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.6), 0 0 80px rgba(255, 215, 0, 0.3), inset 0 0 30px rgba(255, 215, 0, 0.15);
+  }
+}

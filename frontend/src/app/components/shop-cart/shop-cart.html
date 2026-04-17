@@ -2,24 +2,36 @@
   @if(serveralCartItem && serveralCartItem.length > 0) {
     <div class="cart-header">
       <h1>Mon Panier</h1>
-      <button class="btn-clear" (click)="clearCart()"> Vider le panier</button>
+      <button 
+        class="btn-clear" 
+        (click)="clearCart()"
+        type="button"
+        aria-label="Vider complètement le panier"
+      >
+        Vider le panier
+      </button>
     </div>
 
-    <table class="cart-table">
+    <table class="cart-table" role="table" aria-label="Panier d'achat">
       <thead>
         <tr>
-          <th>Nom du Produit</th>
-          <th>Quantité</th>
-          <th>Action</th>
+          <th scope="col">Nom du Produit</th>
+          <th scope="col">Quantité</th>
+          <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody>
         @for(item of serveralCartItem; track item._id) {
           <tr>
-            <td>{{ item.product_id.name }}</td>
-            <td>{{ item.quantity }}</td>
-            <td>
-              <button class="btn-remove" (click)="removeFromCart(item._id)">
+            <td data-label="Nom du Produit">{{ item.product_id.name }}</td>
+            <td data-label="Quantité">{{ item.quantity }}</td>
+            <td data-label="Action">
+              <button 
+                class="btn-remove" 
+                (click)="removeFromCart(item._id)"
+                type="button"
+                [attr.aria-label]="'Supprimer ' + item.product_id.name + ' du panier'"
+              >
                 Supprimer
               </button>
             </td>
