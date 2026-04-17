@@ -1,0 +1,13 @@
+<nav class="navbar">
+  <div class="logo"> Czy to freddy fazbear </div>
+
+  <div class="burger" (click)="toggleMenu()">
+    ☰
+  </div>
+
+  <ul class="nav-links" [class.open]="isOpen">
+    <li><a routerLink="/Accueil" routerLinkActive="active">Accueil</a></li>
+    <li><a routerLink="/Produits" routerLinkActive="active">Produits</a></li>
+    <li><a routerLink="/Panier" routerLinkActive="active">Panier</a></li>
+  </ul>
+</nav>

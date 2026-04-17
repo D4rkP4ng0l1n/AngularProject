@@ -64,7 +64,7 @@
 }
 
 /* Mobile */
-@media (max-width: 600px) {
+@media (max-width: 1024px) {
   .card {
     max-width: 100%;
 
@@ -75,12 +75,5 @@
     h2 {
       font-size: 1rem;
     }
-  }
-}
-
-/* Tablette */
-@media (min-width: 601px) and (max-width: 1024px) {
-  .card {
-    max-width: 220px;
   }
 }

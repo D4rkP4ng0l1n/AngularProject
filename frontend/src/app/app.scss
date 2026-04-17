@@ -1,0 +1,42 @@
+/* Reset basique */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Structure globale */
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #0f172a;
+  color: white;
+    justify-content: center;
+}
+
+/* Container principal */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Zone contenu */
+.main-content {
+  flex: 1;
+  padding: 20px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 15px;
+  }
+}

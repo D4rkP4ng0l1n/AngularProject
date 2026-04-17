@@ -1,10 +1,10 @@
 export class ClsProduct {
-    id !: string;
+    _id !: string;
     name !: string;
     image !: string;
 
-    constructor(id: string, name: string, image: string) {
-        this.id = id;
+    constructor(_id: string, name: string, image: string) {
+        this._id = _id;
         this.name = name;
         this.image = image;
     }
