@@ -2,7 +2,7 @@
   <h2>{{ product.name }}</h2>
   <img [src]="product.image" alt="{{ product.name }}">
 
-  <button (click)="product.addToCart()">
+  <button (click)="add(product._id)">
     Ajouter au panier
   </button>
 </div>
