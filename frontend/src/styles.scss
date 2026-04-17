@@ -1,6 +1,32 @@
+/* Variables CSS */
+:root {
+  --primary-color: #0f0f0f;
+  --secondary-color: #1a1a1a;
+  --accent-color: #ff3c3c;
+  --text-primary: #e0e0e0;
+  --text-secondary: #a0a0a0;
+  --border-color: #2a2a2a;
+  --shadow-color: rgba(255, 60, 60, 0.15);
+  
+  --transition-fast: 0.2s ease;
+  --transition-smooth: 0.3s ease;
+  
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-image: url('https://i.pinimg.com/736x/e5/26/b0/e526b0fcefd2e3ec04fe76cfe06d98c2.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }

@@ -1,0 +1,29 @@
+/* Cart item component styling - if needed for future custom layouts */
+.cart-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  background: var(--secondary-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: all var(--transition-smooth);
+
+  &:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 4px 12px var(--shadow-color);
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+  .cart-item {
+    padding: var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .cart-item {
+    padding: var(--spacing-sm);
+  }
+}

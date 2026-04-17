@@ -1,3 +1,28 @@
-@for(component of serveralCartItem; track component._id) {
-    <app-cart-item [cartItem]="component"></app-cart-item>
-}
+<div class="cart-container">
+  @if(serveralCartItem && serveralCartItem.length > 0) {
+    <table class="cart-table">
+      <thead>
+        <tr>
+          <th>Nom du Produit</th>
+          <th>Quantité</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(item of serveralCartItem; track item._id) {
+          <tr>
+            <td>{{ item.product_id.name }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>
+              <button class="btn-remove">
+                Supprimer
+              </button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  } @else {
+    <p class="empty-cart">Votre panier est vide</p>
+  }
+</div>

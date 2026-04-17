@@ -1,13 +1,15 @@
 <nav class="navbar">
-  <div class="logo"> Czy to freddy fazbear </div>
+  <div class="logo">Czy to freddy fazbear</div>
 
-  <div class="burger" (click)="toggleMenu()">
-    ☰
-  </div>
+  <button class="burger" [class.active]="isOpen" (click)="toggleMenu()" aria-label="Toggle menu" aria-expanded="isOpen">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 
-  <ul class="nav-links" [class.open]="isOpen">
-    <li><a routerLink="/Accueil" routerLinkActive="active">Accueil</a></li>
-    <li><a routerLink="/Produits" routerLinkActive="active">Produits</a></li>
-    <li><a routerLink="/Panier" routerLinkActive="active">Panier</a></li>
+  <ul class="nav-links" [class.open]="isOpen" role="navigation">
+    <li><a routerLink="/Accueil" routerLinkActive="active" (click)="isOpen = false">Accueil</a></li>
+    <li><a routerLink="/Produits" routerLinkActive="active" (click)="isOpen = false">Produits</a></li>
+    <li><a routerLink="/Panier" routerLinkActive="active" (click)="isOpen = false">Panier</a></li>
   </ul>
 </nav>
