@@ -8,8 +8,4 @@ export class ClsProduct {
         this.name = name;
         this.image = image;
     }
-
-    addToCart(): void {
-        console.log(this.name + ' ajouté au panier');
-    }
 }

@@ -21,7 +21,7 @@ router.post('/add', async (req, res) => {
     const item = await CartItem.findOneAndUpdate(
       { product_id },
       { $inc: { quantity: 1 } },
-      { new: true, upsert: true, setDefaultsOnInsert: true }
+      { upsert: true, returnDocument: 'after' }
     );
 
     res.json(item);
