@@ -31,4 +31,35 @@ router.post('/add', async (req, res) => {
   }
 });
 
+// DELETE delete single item from cart
+router.delete('/:id', async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const deletedItem = await CartItem.findByIdAndDelete(id);
+    
+    if (!deletedItem) {
+      return res.status(404).json({ error: 'Item not found in cart' });
+    }
+
+    res.json({ message: 'Item deleted from cart', deletedItem });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// DELETE delete all items from cart
+router.delete('/', async (req, res) => {
+  try {
+    const result = await CartItem.deleteMany({});
+    
+    res.json({ 
+      message: 'All items deleted from cart', 
+      deletedCount: result.deletedCount 
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 module.exports = router;

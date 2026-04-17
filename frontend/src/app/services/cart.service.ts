@@ -23,4 +23,12 @@ export class CartService {
             quantity
         });
     }
+
+    removeFromCart(cartItemId: string): Observable<any> {
+        return this.http.delete(this.apiUrl + '/' + cartItemId);
+    }
+
+    clearCart(): Observable<any> {
+        return this.http.delete(this.apiUrl);
+    }
 }

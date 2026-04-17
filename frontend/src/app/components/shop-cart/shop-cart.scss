@@ -14,6 +14,21 @@
   }
 }
 
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-xl);
+  gap: var(--spacing-lg);
+
+  h1 {
+    font-size: 2rem;
+    color: var(--accent-color);
+    text-shadow: 0 0 10px rgba(255, 60, 60, 0.5);
+    margin: 0;
+  }
+}
+
 .cart-table {
   width: 100%;
   border-collapse: collapse;
@@ -84,6 +99,31 @@
   }
 }
 
+.btn-clear {
+  padding: 10px 20px;
+  border: 2px solid var(--accent-color);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--accent-color);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all var(--transition-smooth);
+  white-space: nowrap;
+
+  &:hover {
+    background: var(--accent-color);
+    color: #000;
+    box-shadow: 0 0 15px rgba(255, 60, 60, 0.9);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0) scale(0.98);
+  }
+}
+
 .empty-cart {
   text-align: center;
   padding: var(--spacing-2xl) var(--spacing-xl);
@@ -99,6 +139,20 @@
 @media (max-width: 1024px) {
   .cart-container {
     padding: var(--spacing-lg);
+  }
+
+  .cart-header {
+    flex-direction: column;
+    align-items: flex-start;
+
+    h1 {
+      font-size: 1.7rem;
+    }
+
+    .btn-clear {
+      width: 100%;
+      text-align: center;
+    }
   }
 
   .cart-table {
@@ -125,6 +179,21 @@
     padding: var(--spacing-md);
   }
 
+  .cart-header {
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: var(--spacing-lg);
+
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .btn-clear {
+      width: 100%;
+    }
+  }
+
   .cart-table {
     font-size: 0.85rem;
 
@@ -145,6 +214,11 @@
     border: 1px solid var(--accent-color);
   }
 
+  .btn-clear {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
   .empty-cart {
     padding: var(--spacing-xl) var(--spacing-lg);
     font-size: 1rem;
@@ -154,6 +228,19 @@
 @media (max-width: 480px) {
   .cart-container {
     padding: var(--spacing-sm);
+  }
+
+  .cart-header {
+    gap: var(--spacing-sm);
+
+    h1 {
+      font-size: 1.3rem;
+    }
+
+    .btn-clear {
+      font-size: 0.8rem;
+      padding: 8px 12px;
+    }
   }
 
   .cart-table {

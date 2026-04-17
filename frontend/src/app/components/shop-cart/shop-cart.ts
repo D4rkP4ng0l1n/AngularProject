@@ -22,4 +22,17 @@ export class ShopCart implements OnInit {
       this.cartItemChangeDetector.detectChanges();
     })
   }
+
+  removeFromCart(cartItemId: string): void {
+    this.cartService.removeFromCart(cartItemId).subscribe(() => {
+      this.loadCart();
+    }
+    );
+  }
+
+  clearCart(): void {      
+    this.cartService.clearCart().subscribe(() => {
+      this.loadCart();
+    });
+  }
 }
