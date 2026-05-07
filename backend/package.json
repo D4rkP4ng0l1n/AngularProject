@@ -4,8 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start:products": "node product-server.js",
-    "start:cart": "node cart-server.js"
+    "start:products": "node product-service/product-server.js",
+    "start:cart": "node cart-service/cart-server.js"
   },
   "keywords": [],
   "author": "",
