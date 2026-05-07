@@ -8,7 +8,7 @@ import { ClsProduct } from "../Models/cls-product-card";
 })
 export class ProductService {
 
-    private apiUrl = 'http://localhost:3000/products';
+    private apiUrl = 'http://localhost:8080/products';
 
     constructor(private http: HttpClient) { }
 

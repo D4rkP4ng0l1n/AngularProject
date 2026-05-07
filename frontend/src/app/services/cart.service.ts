@@ -8,7 +8,7 @@ import { ClsCartItem } from "../Models/cls-cart-item";
 })
 export class CartService {
 
-    private apiUrl = 'http://localhost:3000/cart';
+    private apiUrl = 'http://localhost:8000/cart';
     private postUrl = this.apiUrl + '/add';
     
     // Subject pour notifier les changements du panier

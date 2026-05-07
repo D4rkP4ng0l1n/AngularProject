@@ -2,10 +2,8 @@ require('dotenv').config();
 
 const express = require('express');
 const cors = require('cors');
-const path = require('path');
 
 const connectDB = require('./src/config/db');
-const productRoutes = require('./src/routes/product.routes');
 const cartItemRoutes = require('./src/routes/cartItem.routes');
 
 const app = express();
@@ -13,17 +11,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Connexion DB
 connectDB();
 
-// Routes API
-app.use('/products', productRoutes);
 app.use('/cart', cartItemRoutes);
 
-
-// Lancement serveur
-const PORT = 3000;
+const PORT = process.env.CART_PORT;
 
 app.listen(PORT, () => {
-  console.log(`Serveur lancé sur http://localhost:${PORT}`);
+  console.log(`Service Panier lancé sur http://localhost:${PORT}`);
 });

@@ -36,6 +36,15 @@ ng build
 
 This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
+## Backend services
+
+The project uses two separate backend services:
+
+- `Service Produits` on port `8080`: run `npm run start:products` in the `backend` folder.
+- `Service Panier` on port `8000`: run `npm run start:cart` in the `backend` folder.
+
+Both services connect to MongoDB using `MONGO_URI` from the backend `.env` file.
+
 ## Running unit tests
 
 To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:

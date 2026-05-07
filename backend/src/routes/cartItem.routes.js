@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const CartItem = require('../models/CartItem');
+const Product = require('../models/Product');
 
 // GET shopping cart
 router.get('/', async (req, res) => {
@@ -15,13 +16,17 @@ router.get('/', async (req, res) => {
 
 // POST product into shopping cart
 router.post('/add', async (req, res) => {
-  const { product_id } = req.body;
+  const { product_id, quantity = 1 } = req.body;
+
+  if (!product_id) {
+    return res.status(400).json({ error: 'product_id is required' });
+  }
 
   try {
     const item = await CartItem.findOneAndUpdate(
       { product_id },
-      { $inc: { quantity: 1 } },
-      { upsert: true, returnDocument: 'after' }
+      { $inc: { quantity } },
+      { upsert: true, returnDocument: 'after', setDefaultsOnInsert: true }
     );
 
     res.json(item);
