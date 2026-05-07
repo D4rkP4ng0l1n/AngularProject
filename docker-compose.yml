@@ -1,0 +1,36 @@
+services:
+
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    restart: always
+
+  product-service:
+    build: ./backend
+    container_name: product-service
+    restart: always
+    command: node product-service/product-server.js
+    env_file:
+      - ./backend/.env
+
+  cart-service:
+    build: ./backend
+    container_name: cart-service
+    restart: always
+    command: node cart-service/cart-server.js
+    env_file:
+      - ./backend/.env
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    restart: always
+    depends_on:
+      - frontend
+      - product-service
+      - cart-service
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
