@@ -6,11 +6,13 @@
     loading="lazy"
   >
 
-  <button 
-    (click)="add(product._id)"
-    [attr.aria-label]="'Ajouter ' + product.name + ' au panier'"
-    type="button"
-  >
-    Ajouter au panier
-  </button>
+  @if (product._id !== '1987') {
+    <button 
+      (click)="add(product._id)"
+      [attr.aria-label]="'Ajouter ' + product.name + ' au panier'"
+      type="button"
+    >
+      Ajouter au panier
+    </button>
+  }
 </div>

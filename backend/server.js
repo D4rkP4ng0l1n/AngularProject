@@ -2,6 +2,7 @@ require('dotenv').config();
 
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 
 const connectDB = require('./src/config/db');
 const productRoutes = require('./src/routes/product.routes');
@@ -15,9 +16,10 @@ app.use(express.json());
 // Connexion DB
 connectDB();
 
-// Routes
+// Routes API
 app.use('/products', productRoutes);
 app.use('/cart', cartItemRoutes);
+
 
 // Lancement serveur
 const PORT = 3000;
