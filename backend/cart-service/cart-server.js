@@ -13,7 +13,7 @@ app.use(express.json());
 
 connectDB();
 
-app.use('/cart', cartItemRoutes);
+app.use('/api/cart', cartItemRoutes);
 
 const PORT = process.env.CART_PORT;
 

@@ -13,7 +13,7 @@ app.use(express.json());
 
 connectDB();
 
-app.use('/products', productRoutes);
+app.use('/api/products', productRoutes);
 
 const PORT = process.env.PRODUCTS_PORT;
 
