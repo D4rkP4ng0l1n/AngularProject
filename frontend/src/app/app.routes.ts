@@ -7,5 +7,5 @@ export const routes: Routes = [
     { path: 'Accueil', component: Home },
     { path: 'Produits', component: ProductList },
     { path: 'Panier', component: ShopCart },
-    { path: '', redirectTo: 'Accueil', pathMatch: 'prefix' }
+    { path: '', redirectTo: 'Accueil', pathMatch: 'prefix' },
 ];

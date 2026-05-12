@@ -1,14 +1,21 @@
-/* Reset basique */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Zone contenu */
+.main-content {
+  flex: 1;
+  padding: var(--spacing-xl);
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
 }
 
-/* Focus visible pour la navigation au clavier */
-*:focus-visible {
-  outline: 3px solid var(--accent-color);
-  outline-offset: 2px;
+/* Responsive Main Content - Mobile */
+@media (max-width: 768px) {
+  .main-content {
+    padding: var(--spacing-lg);
+    gap: var(--spacing-lg);
+  }
 }
 
 button:focus-visible,
@@ -74,34 +81,10 @@ p, span, li, td, label {
   line-height: 1.6;
 }
 
-/* Responsive - Tablet */
-@media (max-width: 1024px) {
-  .main-content {
-    max-width: 100%;
-    padding: var(--spacing-lg);
-  }
-}
-
 /* Responsive - Mobile */
 @media (max-width: 768px) {
   .main-content {
     padding: var(--spacing-md);
     gap: var(--spacing-lg);
-  }
-}
-
-@media (max-width: 480px) {
-  .main-content {
-    padding: var(--spacing-sm);
-  }
-}
-
-/* Respect user's motion preferences */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
   }
 }

@@ -1,16 +1,12 @@
 /* Variables CSS */
 :root {
   --primary-color: #0f0f0f;
-  --secondary-color: #1a1a1a;
   --accent-color: #ff3c3c;
   --text-primary: #e0e0e0;
   --text-secondary: #a0a0a0;
   --border-color: #2a2a2a;
   --shadow-color: rgba(255, 60, 60, 0.15);
-  
-  --transition-fast: 0.2s ease;
-  --transition-smooth: 0.3s ease;
-  
+
   --spacing-xs: 0.25rem;
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
@@ -21,6 +17,7 @@
 
 html {
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 body {
@@ -29,4 +26,39 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--primary-color);
+  color: var(--text-primary);
+  scroll-behavior: smooth;
+}
+
+/* Container principal */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Improve text readability */
+p, span, li, td, label {
+  line-height: 1.6;
+}
+
+.btn-remove,
+.btn-clear {
+  padding: 6px 12px;
+  border: 1px solid var(--accent-color);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--accent-color);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.btn-remove:hover,
+.btn-clear:hover {
+  background: var(--accent-color);
+  color: #000;
 }
